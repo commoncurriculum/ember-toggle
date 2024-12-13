@@ -54,6 +54,9 @@ export default class XToggle extends Component {
 
   @action
   toggleSwitch(value) {
+    // Prevent re-renders when the element is cleaning up (which cause errors).
+    if (this.isDestroyed || this.isDestroying) return
+
     let onToggle = this.args.onToggle;
     let disabled = this.disabled;
 

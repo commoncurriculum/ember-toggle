@@ -1,9 +1,9 @@
+import { getOwner } from '@ember/application';
 import { action } from '@ember/object';
+import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { getOwner } from '@ember/application';
-import { guidFor } from '@ember/object/internals';
-import { cached } from '@glimmer/tracking';
+import { cached } from 'tracked-toolbox';
 
 function configValue(configName, defaultValue) {
   return function (target, name) {
